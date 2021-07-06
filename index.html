@@ -14,13 +14,11 @@
     <div id="app">
         <div class="container mt-3">
             <div v-for="(job,index) in jobs"  class=" row firstMilestone justify-content-center">
-                <ul class=" jobs-content col-8 pt-2 pb-2">
-                    
+                <ul class=" jobs-content col-8 pt-2 pb-2"> 
                     <li>
                        <h4>{{job.company}}</h4> 
                        <i v-if="starred.includes(job.id)" class="fas fa-star" @click="removeToFav(starred,job.id)"></i>
-                       <i v-else="starred.includes(job.id)" class="far fa-star" @click="addToFav(starred,job.id)"></i> 
-                       
+                       <i v-else="starred.includes(job.id)" class="far fa-star" @click="addToFav(starred,job.id)"></i>    
                     </li>
                     <li>
                         {{job.position}}
@@ -28,17 +26,26 @@
                     <li>
                         {{job.description}}
                     </li>
-                    <li>
+                    <li class="date mt-1">
                         {{job.created_at}}
                     </li>
-                    <li>
+                    <li class="city">
                         {{job.city}}
                     </li>
-                    <li>
+                    <li class="contract">
                         {{job.contract}}
                     </li> 
-                    <button type="button" class="btn btn-success">Apply</button>
+                        <div v-if="applied.includes(job.id)" class="move-on">
+                            <button type="button" class="btn btn-danger" @click="remove(applied,job.id)">Applied</button>
+                        </div>
+                        <div v-else="applied.includes(job.id)" class="move-on">
+                            <button type="button" class="btn btn-success" @click="applyOn(applied,job.id)">Apply</button>
+                        </div>
                 </ul>
+                <div class="application-sent col-4">
+                    <div class="close">Chiudi</div>
+                    <h3>Candidatura inviata!</h3>
+                </div>
             </div>
         </div>
 

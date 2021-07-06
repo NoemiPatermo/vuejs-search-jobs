@@ -1,16 +1,58 @@
 .jobs-content li:first-child{
     text-decoration: underline;
+    text-align: center;
 }
 .jobs-content{
-    border: 2px solid brown;
+    background-color:snow;
+    border: 2px solid green;
+    box-shadow: 5px 10px #888888 ;
+    border-radius: 5px;
     list-style:none;
 }
+
 li i{
-   font-size: 25px;
+   font-size: 20px;
    float: right;
-   margin-right: 10px;
+   margin-right: 5px;
    cursor: pointer;
 }
-button{
+li:nth-child(2){
+    font-weight: 700;
+    font-size: 15px;
+}
+li:nth-child(3){
+    font-style: oblique;
+}
+.date{
+    font-size: 12px;
+}
+.city{
+    font-style: oblique;
     float: right;
+    margin-right: 10px;
+}
+.contract{
+    font-weight: 700;
+    font-size: smaller;
+}
+.move-on{
+    display: flex;
+    justify-content: center;
+}
+
+.application-sent{
+    display: none;
+    position: fixed;
+    top: 200px;
+    border: 2px #333 solid;
+    border-radius: 15px;
+    padding: 32px;
+    background-color: rgba(21, 128, 0, 0.863);
+    color: #fff;
+}
+.application-sent .close {
+    position: absolute;
+    cursor: pointer;
+    right: 40px;
+    top: 40px;
 }
