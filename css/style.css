@@ -1,0 +1,7 @@
+.jobs-content li:first-child{
+    text-decoration: underline;
+}
+.jobs-content{
+    border: 2px solid brown;
+    list-style:none;
+}
