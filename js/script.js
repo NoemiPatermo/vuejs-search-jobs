@@ -26,7 +26,7 @@ new Vue (
                   }, 
                 {
                     id: 3,
-                    company: 'Stabiliantis',
+                    company: 'Strabiliantis',
                     position: 'Developer',
                     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam similique adipisci! Perferendis odio sapiente libero quam deleniti quidem consequuntur adipisci minima non iusto, sunt optio hic. Corporis, laboriosam perferendis?',
                     created_at: '5/22/2021',
@@ -35,9 +35,18 @@ new Vue (
                     contract: 'Full Time'
                   }, 
             ],
-            starred: [1, 2, 3],
+            starred: [],
             applied: [4, 5]
             
-        }//chiude il data
+        },//chiude il data
+        methods: {
+            addToFav: function(starred,id) {
+                starred.push(id)
+            },
+            removeToFav: function(starred,id) {
+                let index = starred.indexOf(id)
+                starred.splice(index, 1)
+            }
+        }
 
 })//chiude la vue

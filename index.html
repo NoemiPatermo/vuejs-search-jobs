@@ -15,10 +15,12 @@
         <!--Milestone 1
         Mostriamo tutti gli annunci in una lista, con una grafica molto elementare.-->
         <div class="container mt-3">
-            <div v-for="job in jobs"  class=" row firstMilestone justify-content-center">
-                <ul class=" jobs-content col-8">
+            <div v-for="(job,index) in jobs"  class=" row firstMilestone justify-content-center">
+                <ul class=" jobs-content col-8 pt-2 pb-2">
                     <li>
                        <h4>{{job.company}}</h4> 
+                       <i v-if="starred.includes(job.id)" class="fas fa-star" @click="removeToFav(starred,job.id)"></i>
+                       <i v-else="starred.includes(job.id)" class="far fa-star" @click="addToFav(starred,job.id)"></i>  
                     </li>
                     <li>
                         {{job.position}}

@@ -5,3 +5,7 @@
     border: 2px solid brown;
     list-style:none;
 }
+li i{
+   font-size: 25px;
+   float: right;
+}
