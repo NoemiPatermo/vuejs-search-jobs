@@ -56,3 +56,14 @@ li:nth-child(3){
     right: 40px;
     top: 40px;
 }
+.starred-content{
+    text-align: center;
+    text-decoration: underline;
+    
+}
+#box{
+    box-shadow: 5px 10px yellow;
+}
+#box-2{
+    box-shadow: 5px 10px green;
+}

@@ -38,7 +38,7 @@ new Vue (
             starred: [],
             applied: []
             
-        },//chiude il data
+        },
         methods: {
             addToFav: function(starred,id) {
                 starred.push(id)
@@ -64,6 +64,6 @@ new Vue (
             },
             
             
-        }//chiude il methods
+        }
 
-});//chiude la vue
+});

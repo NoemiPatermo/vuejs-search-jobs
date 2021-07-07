@@ -13,42 +13,102 @@
 <body>
     <div id="app">
         <div class="container mt-3">
-            <div v-for="(job,index) in jobs"  class=" row firstMilestone justify-content-center">
-                <ul class=" jobs-content col-8 pt-2 pb-2"> 
-                    <li>
-                       <h4>{{job.company}}</h4> 
-                       <i v-if="starred.includes(job.id)" class="fas fa-star" @click="removeToFav(starred,job.id)"></i>
-                       <i v-else="starred.includes(job.id)" class="far fa-star" @click="addToFav(starred,job.id)"></i>    
-                    </li>
-                    <li>
-                        {{job.position}}
-                    </li>
-                    <li>
-                        {{job.description}}
-                    </li>
-                    <li class="date mt-1">
-                        {{job.created_at}}
-                    </li>
-                    <li class="city">
-                        {{job.city}}
-                    </li>
-                    <li class="contract">
-                        {{job.contract}}
-                    </li> 
-                        <div v-if="applied.includes(job.id)" class="move-on">
-                            <button type="button" class="btn btn-danger" @click="remove(applied,job.id)">Applied</button>
+            <div class="row">
+                <div class="col-4">
+                    <div v-for="(job,index) in jobs">
+                        <ul class=" jobs-content  pt-2 pb-2"> 
+                            <li>
+                            <h4>{{job.company}}</h4> 
+                            <i v-if="starred.includes(job.id)" class="fas fa-star" @click="removeToFav(starred,job.id)"></i>
+                            <i v-else class="far fa-star" @click="addToFav(starred,job.id)"></i>    
+                            </li>
+                            <li>
+                                {{job.position}}
+                            </li>
+                            <li>
+                                {{job.description}}
+                            </li>
+                            <li class="date mt-1">
+                                {{job.created_at}}
+                            </li>
+                            <li class="city">
+                                {{job.city}}
+                            </li>
+                            <li class="contract">
+                                {{job.contract}}
+                            </li> 
+                                <div v-if="applied.includes(job.id)" class="move-on">
+                                    <button type="button" class="btn btn-danger" @click="remove(applied,job.id)">Applied</button>
+                                </div>
+                                <div v-else="applied.includes(job.id)" class="move-on">
+                                    <button type="button" class="btn btn-success" @click="applyOn(applied,job.id)">Apply</button>
+                                </div>
+                        </ul>
+                    </div>   
+                </div>
+                
+                    <div class="col-4">
+                        <h5 class="starred-content">Starred List</h5>
+                        <div v-for="job in jobs">
+                            <div v-if="starred.includes(job.id)">
+                                <ul class="jobs-content pt-2 pb-2" id="box">
+                                    <li>
+                                        <h4>{{job.company}}</h4>
+                                    </li>
+                                    <li>
+                                        {{job.position}}
+                                    </li>
+                                    <li>
+                                        {{job.description}}
+                                    </li>
+                                    <li class="date mt-1">
+                                        {{job.created_at}}
+                                    </li>
+                                    <li class="city">
+                                        {{job.city}}
+                                    </li>
+                                    <li class="contract">
+                                        {{job.contract}}
+                                    </li> 
+                                </ul>
+                            </div>
                         </div>
-                        <div v-else="applied.includes(job.id)" class="move-on">
-                            <button type="button" class="btn btn-success" @click="applyOn(applied,job.id)">Apply</button>
+                    </div>    
+                        <div class="col-4">
+                            <h5 class="starred-content">Applied List</h5>
+                            <div v-for="job in jobs">
+                                <div v-if="applied.includes(job.id)">
+                                    <ul class="jobs-content pt-2 pb-2" id="box-2">
+                                        <li>
+                                            <h4>{{job.company}}</h4>
+                                        </li>
+                                        <li>
+                                            {{job.position}}
+                                        </li>
+                                        <li>
+                                            {{job.description}}
+                                        </li>
+                                        <li class="date mt-1">
+                                            {{job.created_at}}
+                                        </li>
+                                        <li class="city">
+                                            {{job.city}}
+                                        </li>
+                                        <li class="contract">
+                                            {{job.contract}}
+                                        </li> 
+                                    </ul>
+                                </div>
+
+                            </div>
                         </div>
-                </ul>
+            </div>
                 <div class="application-sent col-4">
                     <div class="close">Chiudi</div>
                     <h3>Candidatura inviata!</h3>
                 </div>
-            </div>
+            
         </div>
-
     </div>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
